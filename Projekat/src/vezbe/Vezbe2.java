@@ -40,19 +40,54 @@ public class Vezbe2 {
 //		}
 		
 //		Zadatak 2
+//		Scanner scanner = new Scanner(System.in);
+//		System.out.println("Unesite broj godina");
+//		int godine = Integer.valueOf(scanner.nextLine());
+//		if(godine > 0 && godine <=12) {
+//			System.out.println("Dete");
+//		}else if(godine > 12 && godine <=19) {
+//			System.out.println("Tinejdzer");
+//		}else if(godine > 19 && godine < 65) {
+//			System.out.println("Odrasla osoba");
+//		}
+//		else {
+//			System.out.println("Starija osoba");
+//		}
+		
+		//Vezba 3
+/*		Scanner scanner = new Scanner(System.in);
+		System.out.println("Unesite prirodan broj:");
+		int prirodanBroj = scanner.nextInt();
+		int drugiBrojac = prirodanBroj;
+		
+		System.out.println("For petlja:");
+		for(; prirodanBroj > 0; prirodanBroj--) {
+			System.out.print(" " +prirodanBroj);
+		}
+		
+		System.out.println("\nWhile petlja:");
+		while(drugiBrojac > 0) {
+			System.out.print(" " +drugiBrojac);
+			drugiBrojac --;
+		}*/
+		
+//		Zadatak 4
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Unesite broj godina");
-		int godine = Integer.valueOf(scanner.nextLine());
-		if(godine > 0 && godine <=12) {
-			System.out.println("Dete");
-		}else if(godine > 12 && godine <=19) {
-			System.out.println("Tinejdzer");
-		}else if(godine > 19 && godine < 65) {
-			System.out.println("Odrasla osoba");
+		System.out.println("Unesite prirodan broj:");
+		int unetiBroj = scanner.nextInt();
+		int temp = unetiBroj;
+		int sum = 0;
+		while(unetiBroj > 0) {
+			if(unetiBroj %2 == 0) {
+				sum+=unetiBroj;
+			}
+			unetiBroj --;
 		}
-		else {
-			System.out.println("Starija osoba");
-		}
+		System.out.println(String.format("Zbig parnih brojeva za broj %s je %s",temp,sum ));
+		
+		
+		
+		
 	}
 
 }
