@@ -22,6 +22,37 @@ public class Main {
 		
 		System.out.println(String.format("Stanje objekta p2 je: x: %s, y: %s, "
 				+ "selected: %s",p2.getX(), p2.getY(), p2.isSelected()));
+//		===========================================================
+//		Vezbe 4
+		Line l1 = new Line();
+		l1.setStartPoint(p1);
+		p1.setX(10);
+		l1.getStartPoint().setX(15);
+		l1.setEndPoint(new Point());
+//		p2 = l1.getEndPoint();
+//		p2.setX(15);
+		System.out.println(l1);
+		System.out.println(l1.getStartPoint());
+		System.out.println(l1.getEndPoint());
+//		System.out.println(l1.getEndPoint().getX());
+		System.out.println(l1.length());
+		
+		Circle c1 = new Circle();
+		c1.setCenter(new Point());
+		c1.getCenter().setX(20);
+		c1.getCenter().setY(10);
+		c1.setRadius(10);
+		System.out.println(String.format("Vrednosti kruga su - "
+				+ "Centar X: %s, Centar Y: %s, radius: %s"
+				,c1.getCenter().getX(), c1.getCenter().getY(), c1.getRadius() ));
+		System.out.println(String.format("Povrsina kruga je: %s, a obim: %s", 
+				c1.area(), c1.circumference()));
+		
+		
+		
+		
+		
+		
 	}
 
 }
