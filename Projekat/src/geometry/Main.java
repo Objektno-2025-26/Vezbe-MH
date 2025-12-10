@@ -3,6 +3,7 @@ package geometry;
 public class Main {
 
 	public static void main(String[] args) {
+/*		
 //		Vezbe 3
 		Point p1 = new Point();
 //		p1.x = 20;
@@ -47,6 +48,26 @@ public class Main {
 				,c1.getCenter().getX(), c1.getCenter().getY(), c1.getRadius() ));
 		System.out.println(String.format("Povrsina kruga je: %s, a obim: %s", 
 				c1.area(), c1.circumference()));
+*/		
+//		Vezbe 5 - Overriding
+		Point p1 = new Point(20,10,true);
+//		System.out.println(p1.toString());
+		p1.setY(100);
+//		System.out.println(p1);
+		
+		Circle c1 = new Circle(p1, 50);
+		Circle c2 = new Circle(new Point(100,100), 50);
+		Object p2 = new Point(20,20);
+		Object c3 = new Circle(p1,50);
+		
+		System.out.println(c1.getClass());
+		System.out.println(c2.getClass());
+		System.out.println(p2.getClass());
+		System.out.println(c3.getClass());
+		
+		System.out.println(c1.equals(p2));
+		
+		
 		
 		
 		

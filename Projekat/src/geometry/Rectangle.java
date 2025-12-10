@@ -7,12 +7,43 @@ public class Rectangle {
 	private int height;
 	private boolean selected;
 	
+	public Rectangle() {
+		
+	}
+	
+	public Rectangle(Point upperLeft, int width, int height) {
+		this.upperLeft = upperLeft;
+		this.width = width;
+		this.height = height;
+	}
+	
+	public Rectangle(Point upperLeft, int width, int height, boolean selected) {
+		this(upperLeft, width, height);
+		this.selected = selected;
+	}
+	
 	public int area() {
 		return width*height;
 	}
 	
 	public int circumference() {
 		return 2*width + 2*height;
+	}
+	
+	@Override
+	public String toString() {
+		return String.format("Upper left: (%s,%s), width = %s, height = %s", 
+				upperLeft.getX(), upperLeft.getY(), width, height);
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof Rectangle) {
+			Rectangle temp = (Rectangle)obj;
+			if(width == temp.getWidth() && height == temp.getHeight())
+				return true;
+		}
+		return false;
 	}
 	
 	public Point getUpperLeft() {

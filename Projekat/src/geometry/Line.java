@@ -6,8 +6,38 @@ public class Line {
 	private Point endPoint;
 	private boolean selected;
 	
+	public Line() {
+		
+	}
+	
+	public Line(Point startPoint, Point endPoint) {
+		this.startPoint = startPoint;
+		this.endPoint = endPoint;
+	}
+	
+	public Line(Point startPoint, Point endPoint, boolean selected) {
+		this.selected = selected;
+	}
+	
 	public double length() {
 		return startPoint.distance(endPoint);
+	}
+	
+	@Override
+	public String toString() {
+		return String.format("(%s,%s) --> (%s,%s)", startPoint.getX(), startPoint.getY()
+				, endPoint.getX(), endPoint.getY());
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof Line) {
+			Line temp = (Line)obj;
+			if(startPoint.equals(temp.getStartPoint()) && 
+					endPoint.equals(temp.getEndPoint()))
+				return true;
+		}
+		return false;
 	}
 	
 	public Point getStartPoint() {
