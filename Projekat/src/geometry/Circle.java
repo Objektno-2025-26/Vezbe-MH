@@ -2,9 +2,9 @@ package geometry;
 
 public class Circle {
 
-	private Point center;
-	private int radius;
-	private boolean selected;
+	protected Point center;
+	protected int radius;
+	protected boolean selected;
 	
 	public Circle() {
 		
@@ -38,7 +38,7 @@ public class Circle {
 	public boolean equals(Object obj) {
 		if(obj instanceof Circle) {
 			Circle temp = (Circle)obj;
-			if(radius == temp.getRadius()) return true;
+			if(radius == temp.getRadius() && center.equals(temp.getCenter())) return true;
 		}
 		return false;
     }

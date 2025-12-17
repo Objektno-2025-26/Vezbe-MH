@@ -55,18 +55,28 @@ public class Main {
 		p1.setY(100);
 //		System.out.println(p1);
 		
-		Circle c1 = new Circle(p1, 50);
-		Circle c2 = new Circle(new Point(100,100), 50);
-		Object p2 = new Point(20,20);
-		Object c3 = new Circle(p1,50);
+//		Circle c1 = new Circle(p1, 50);
+//		Circle c2 = new Circle(new Point(100,100), 50);
+//		Object p2 = new Point(20,20);
+//		Object c3 = new Circle(p1,50);
+//		
+//		System.out.println(c1.getClass());
+//		System.out.println(c2.getClass());
+//		System.out.println(p2.getClass());
+//		System.out.println(c3.getClass());
+//		
+//		System.out.println(c1.equals(p2));
 		
-		System.out.println(c1.getClass());
-		System.out.println(c2.getClass());
-		System.out.println(p2.getClass());
-		System.out.println(c3.getClass());
-		
-		System.out.println(c1.equals(p2));
-		
+//		Vezbe 6
+		Donut d1 = new Donut(new Point(10,10), 40, 20, true);
+		System.out.println(d1.getRadius());
+//		Objekat podklase je uvek instanca te klase i svih svojih nadklassa
+		System.out.println(d1 instanceof Circle);
+		System.out.println(d1 instanceof Object);
+		System.out.println(d1 instanceof Donut);
+//		Objekat nadklase nikad nije instanca podklase
+		Circle c3 = new Circle();
+		System.out.println(c3 instanceof Donut);
 		
 		
 		
