@@ -1,5 +1,7 @@
 package geometry;
 
+import java.awt.Graphics;
+
 public class Donut extends Circle{
   
 	private int innerRadius;
@@ -18,6 +20,19 @@ public class Donut extends Circle{
 		this.selected = selected;
 //		super(center,radius,selected);
 //		this.innerRadius = innerRadius;
+	}
+	
+	@Override
+	public boolean contains(int x, int y) {
+		Point click = new Point(x,y);
+		return super.contains(x, y) && center.distance(click) >= innerRadius;
+	}
+
+	@Override
+	public void draw(Graphics g) {
+		super.draw(g);
+		g.drawOval(center.getX() - innerRadius, center.getY()- innerRadius, 
+				innerRadius*2, innerRadius*2);
 	}
 	
 	@Override
