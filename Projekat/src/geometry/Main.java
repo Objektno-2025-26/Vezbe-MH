@@ -68,7 +68,7 @@ public class Main {
 //		System.out.println(c1.equals(p2));
 		
 //		Vezbe 6
-		Donut d1 = new Donut(new Point(10,10), 40, 20, true);
+/*		Donut d1 = new Donut(new Point(10,10), 40, 20, true);
 		System.out.println(d1.getRadius());
 //		Objekat podklase je uvek instanca te klase i svih svojih nadklassa
 		System.out.println(d1 instanceof Circle);
@@ -76,7 +76,14 @@ public class Main {
 		System.out.println(d1 instanceof Donut);
 //		Objekat nadklase nikad nije instanca podklase
 		Circle c3 = new Circle();
-		System.out.println(c3 instanceof Donut);
+		System.out.println(c3 instanceof Donut);*/
+		
+		
+//		System.out.println(Moveable.BROJ);
+//		Main.main(args);
+		
+		
+		
 		
 		
 		
