@@ -82,9 +82,45 @@ public class Main {
 //		System.out.println(Moveable.BROJ);
 //		Main.main(args);
 		
+//		Vezbe 9
+//		Prvi nacin
+		int[] brojevi = new int[4];
+		brojevi[0] = 4;
+		brojevi[1] = 5;
+		brojevi[2] = 6;
+		brojevi[3] = 7;
+		
+//		for(int i = brojevi.length - 1; i >=0; i--) {
+//			System.out.print(brojevi[i]+" ");
+//		}
+		
+//		for(int i = 0; i <= brojevi.length-1; i++) {
+//			brojevi[i] *= 5;
+//			System.out.print(brojevi[i] + " ");
+//		}
+		
+//		Drugi nacin
+//		int[] brojevi2 = {4,5,6,7};
+		
+		Circle c1 = new Circle(new Point(0,50), 50);
+		
+		try {
+			c1.setRadius(-20);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 		
 		
+		String broj = "100";
+		try {
+			int konvertovanaVrednost = Integer.valueOf(broj);
+			System.out.println(konvertovanaVrednost);
+		} catch (Exception e) {
+			System.out.println("Vrednost  " + broj + " nije broj!");
+		}
 		
+		
+		System.out.println("Aplikacija nastavlja sa daljim radom!");
 		
 		
 		

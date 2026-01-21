@@ -88,8 +88,13 @@ public class Circle extends Shape {
 		return radius;
 	}
 	
-	public void setRadius(int radius) {
-		this.radius = radius;
+	public void setRadius(int radius) throws Exception {
+		if(radius <= 0) {
+			throw new Exception("Radius mora biti veci od nule!");
+		}else {
+			this.radius = radius;
+		}
+		
 	}
 
 	

@@ -44,7 +44,7 @@ public class Drawing extends JPanel {
 		shapes.add(c1);
 		shapes.add(d1);
 
-		for (Shape s : shapes) {
+/*		for (Shape s : shapes) {
 //			Inicijalno iscrtavanje
 			g.setColor(Color.BLUE);
 			s.draw(g);
@@ -58,9 +58,9 @@ public class Drawing extends JPanel {
 			g.setColor(Color.GREEN);
 			s.moveTo(150, 150);
 			s.draw(g);
-		}
+		}*/
 		
-		Rectangle r2 = new Rectangle(new Point(600,300),50,50);
+/*		Rectangle r2 = new Rectangle(new Point(600,300),50,50);
 		
 		int innerRadius = (int)(r2.getWidth()*Math.sqrt(2) / 2);
 		Point center = new Point(r2.getUpperLeft().getX() + r2.getWidth()/2, 
@@ -69,7 +69,32 @@ public class Drawing extends JPanel {
 		
 		g.setColor(Color.BLACK);
 		r2.draw(g);
-		d2.draw(g);
+		d2.draw(g);*/
+		
+//		shapes.get(2).draw(g);
+		shapes.get(shapes.size()-1).draw(g);
+//		Kada se izbrise element sa liste, svi elementi iza njega se pomeraju za jednu 
+//		poziciju blize pocetku, odnosno indeks im se smanjuje za 1 
+//		i size liste se smanjuje za 1
+		shapes.remove(1);
+		g.setColor(Color.GREEN);
+//		shapes.get(1).draw(g);
+//		Dodavanje linije na cetvrtu poziciju
+		shapes.add(3, l1);
+		
+		for(Shape s: shapes) {
+			if(s instanceof Circle) {
+				s.draw(g);
+			}else if (s instanceof Rectangle) {
+				s.draw(g);
+			}
+		}
+		
+//		System.out.println(String.valueOf(d1 instanceof Shape));
+		
+		
+		
+		
 
 	}
 }
