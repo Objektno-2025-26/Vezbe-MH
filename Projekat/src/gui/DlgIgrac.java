@@ -9,6 +9,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.GridBagConstraints;
 import javax.swing.JTextField;
 import java.awt.Insets;
@@ -18,7 +20,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class DlgIgac extends JDialog {
+public class DlgIgrac extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 	private JTextField textFieldIme;
@@ -30,7 +32,7 @@ public class DlgIgac extends JDialog {
 	 */
 	public static void main(String[] args) {
 		try {
-			DlgIgac dialog = new DlgIgac();
+			DlgIgrac dialog = new DlgIgrac();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 		} catch (Exception e) {
@@ -41,7 +43,7 @@ public class DlgIgac extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public DlgIgac() {
+	public DlgIgrac() {
 		setModal(true);
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
@@ -123,8 +125,17 @@ public class DlgIgac extends JDialog {
 				JButton okButton = new JButton("OK");
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						setOkay(true);
-						dispose();
+						if(getTextFieldIme().getText().length() >= 2 &&
+								getTextFieldPrezime().getText().length() >= 2) {
+							setOkay(true);
+							dispose();
+						}else {
+							JOptionPane.showInternalMessageDialog(null, 
+									"Ime i prezime moraju imati minimalno dva karaktera!", 
+									"Nevalidan unos", JOptionPane.WARNING_MESSAGE);
+						}
+						
+						
 					}
 				});
 				okButton.setActionCommand("OK");
@@ -148,16 +159,16 @@ public class DlgIgac extends JDialog {
 		return textFieldIme;
 	}
 
-	public void setTextFieldIme(JTextField textFieldIme) {
-		this.textFieldIme = textFieldIme;
+	public void setTextFieldIme(String ime) {
+		this.textFieldIme.setText(ime);
 	}
 
 	public JTextField getTextFieldPrezime() {
 		return textFieldPrezime;
 	}
 
-	public void setTextFieldPrezime(JTextField textFieldPrezime) {
-		this.textFieldPrezime = textFieldPrezime;
+	public void setTextFieldPrezime(String prezime) {
+		this.textFieldPrezime.setText(prezime);
 	}
 
 	public void setOkay(boolean okay) {
